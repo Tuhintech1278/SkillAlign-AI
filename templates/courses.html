@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Courses</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>SkillAlign AI</h2>
+
+<a href="/">Dashboard</a>
+
+</nav>
+
+
+<div class="container">
+
+<h1>Course & Qualification Database</h1>
+
+<table>
+
+<tr>
+
+<th>Course</th>
+<th>Qualification</th>
+<th>Skills</th>
+<th>Demand Score</th>
+
+</tr>
+
+
+{% for course in courses %}
+
+<tr>
+
+<td>{{ course.course_name }}</td>
+
+<td>{{ course.qualification }}</td>
+
+<td>{{ course.skills }}</td>
+
+<td>
+
+<span class="score">
+
+{{ course.demand_score }}%
+
+</span>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>

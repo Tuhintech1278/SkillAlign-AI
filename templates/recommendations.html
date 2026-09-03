@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Course Recommendations - SkillAlign AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>SkillAlign AI</h2>
+
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/jobs">Jobs</a>
+        <a href="/skills">Skills</a>
+        <a href="/courses">Courses</a>
+        <a href="/recommendations">Recommendations</a>
+        <a href="/district-plan">District Plan</a>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <h1>Course Recommendations</h1>
+
+    <p class="subtitle">
+        AI-powered recommendations based on current skill demand and skill gaps.
+    </p>
+
+
+    <div class="cards">
+
+        {% for recommendation in recommendations %}
+
+        <div class="card">
+
+            <h2>
+                {{ recommendation.course }}
+            </h2>
+
+            <p>
+                <strong>Skill:</strong>
+                {{ recommendation.skill }}
+            </p>
+
+            <p>
+                <strong>Reason:</strong>
+                {{ recommendation.reason }}
+            </p>
+
+            <p>
+                <strong>Priority:</strong>
+                {{ recommendation.priority }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% if not recommendations %}
+
+    <div class="card">
+
+        <h2>No recommendations available</h2>
+
+        <p>
+            There are currently no course recommendations
+            available for the selected data.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Skill Demand</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>SkillAlign AI</h2>
+
+<a href="/">Dashboard</a>
+
+</nav>
+
+
+<div class="container">
+
+<h1>Industry Skill Demand</h1>
+
+
+<div class="skill-container">
+
+{% for skill in skills %}
+
+<div class="skill-card">
+
+<h2>{{ skill.skill }}</h2>
+
+<p>
+
+Demand:
+
+<strong>
+{{ skill.demand }}
+job postings
+</strong>
+
+</p>
+
+<div class="progress">
+
+<div style="
+width: {{ skill.demand * 20 }}%;
+"></div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>

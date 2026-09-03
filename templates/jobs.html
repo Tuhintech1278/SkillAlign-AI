@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Job Market</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>SkillAlign AI</h2>
+
+<a href="/">Dashboard</a>
+
+</nav>
+
+
+<div class="container">
+
+<h1>Job Market Intelligence</h1>
+
+<table>
+
+<tr>
+
+<th>Job Role</th>
+<th>Company</th>
+<th>Location</th>
+<th>Skills</th>
+<th>Salary</th>
+
+</tr>
+
+{% for job in jobs %}
+
+<tr>
+
+<td>{{ job.title }}</td>
+
+<td>{{ job.company }}</td>
+
+<td>{{ job.location }}</td>
+
+<td>{{ job.skills }}</td>
+
+<td>₹{{ job.salary }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>

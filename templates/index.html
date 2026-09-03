@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkillAlign AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>SkillAlign AI</h2>
+
+    <div>
+
+        <a href="/">Dashboard</a>
+        <a href="/jobs">Jobs</a>
+        <a href="/skills">Skills</a>
+        <a href="/courses">Courses</a>
+        <a href="/recommendations">Recommendations</a>
+        <a href="/district-plan">District Plan</a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>Labour Market Intelligence Dashboard</h1>
+
+    <p class="subtitle">
+        AI-powered skill development and curriculum alignment platform
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Total Job Postings</h3>
+
+            <h1>{{ total_jobs }}</h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Available Courses</h3>
+
+            <h1>{{ total_courses }}</h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Locations</h3>
+
+            <h1>{{ locations|length }}</h1>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+        <div class="panel">
+
+            <h2>Platform Workflow</h2>
+
+            <div class="workflow">
+
+                <div>Job Data</div>
+                <span>→</span>
+
+                <div>Skill Analysis</div>
+                <span>→</span>
+
+                <div>Skill Gap</div>
+                <span>→</span>
+
+                <div>Course Recommendation</div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>System Features</h2>
+
+            <ul>
+
+                <li>✔ Industry demand analysis</li>
+
+                <li>✔ Skill gap identification</li>
+
+                <li>✔ Course recommendation</li>
+
+                <li>✔ Curriculum improvement</li>
+
+                <li>✔ District training planning</li>
+
+                <li>✔ Employer feedback</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

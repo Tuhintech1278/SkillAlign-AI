@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>District Training Plan</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>SkillAlign AI</h2>
+
+<a href="/">Dashboard</a>
+
+</nav>
+
+
+<div class="container">
+
+<h1>District-Level Training Plan</h1>
+
+
+<table>
+
+<tr>
+
+<th>District</th>
+
+<th>Job Demand</th>
+
+<th>Recommended Training</th>
+
+</tr>
+
+
+{% for plan in plans %}
+
+<tr>
+
+<td>
+
+{{ plan.district }}
+
+</td>
+
+<td>
+
+{{ plan.job_demand }}
+
+</td>
+
+<td>
+
+{{ plan.recommended_training }}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>
